@@ -4,7 +4,7 @@ module DeviseSecurityExtension
       include DeviseSecurityExtension::Controllers::Helpers
     end
     
-    if Rails.version > "5"
+    if Rails.version.to_f > 5
       ActiveSupport::Reloader.to_prepare do
         DeviseSecurityExtension::Patches.apply
       end
